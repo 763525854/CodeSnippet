@@ -20,8 +20,8 @@ public class Run1 {
 	}
 }
 
-class MyThread extends Thread {
-	public MyThread() {
+class MyThreadGG extends Thread {
+	public MyThreadGG() {
 		System.out.println("构造方法的答应" + Thread.currentThread().getName());
 	}
 

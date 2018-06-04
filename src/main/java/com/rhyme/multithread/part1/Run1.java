@@ -10,7 +10,7 @@ package com.rhyme.multithread.part1;
  */
 public class Run1 {
 	public static void main(String[] args) {
-		MyThread myThread = new MyThread();
+		MyThread1 myThread = new MyThread1();
 		// myThread.stop();
 		// myThread.suspend();
 		// myThread.resume();

@@ -5,18 +5,17 @@ package com.rhyme.multithread.part2;
 
 /**
  * @Author: weiping.gong
- * @Description:xx
+ * @Description:
  * @Date: created in 2018年6月4日
  */
-public class SynBlockStringTest {
+public class MyListTest {
 	public static void main(String[] args) {
-		SynBlockString service = new SynBlockString();
-		SyncBlockA a = new SyncBlockA(service);
-		SyncBlockB b = new SyncBlockB(service);
+		MyList myList = new MyList();
+		MyListThreada a = new MyListThreada(myList);
+		MyListThreadb b = new MyListThreadb(myList);
 		a.setName("A");
-		a.start();
 		b.setName("B");
+		a.start();
 		b.start();
 	}
-
 }

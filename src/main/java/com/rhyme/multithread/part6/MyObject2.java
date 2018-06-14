@@ -17,12 +17,11 @@ public class MyObject2 {
 	public static MyObject2 getInstance() {
 		if (myObject != null) {
 		} else {
-			try {
-				Thread.sleep(3000);
-			} catch (InterruptedException e) {
-				e.printStackTrace();
+			synchronized (MyObject2.class) {
+				if (myObject == null) {
+					myObject = new MyObject2();
+				}
 			}
-			myObject = new MyObject2();
 		}
 		return myObject;
 	}

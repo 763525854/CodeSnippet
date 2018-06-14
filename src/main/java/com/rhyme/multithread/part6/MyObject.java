@@ -16,6 +16,11 @@ public class MyObject {
 	}
 
 	public static MyObject getInstance() {
+		try {
+			Thread.sleep(3000);
+		} catch (InterruptedException e) {
+			e.printStackTrace();
+		}
 		return myObject;
 	}
 

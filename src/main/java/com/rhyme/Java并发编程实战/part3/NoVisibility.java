@@ -16,10 +16,9 @@ public class NoVisibility {
 		@Override
 		public void run() {
 			super.run();
-			while (!ready) {
+			while (!ready)
 				Thread.yield();
-				System.out.println(number);
-			}
+			System.out.println(number);
 		}
 	}
 

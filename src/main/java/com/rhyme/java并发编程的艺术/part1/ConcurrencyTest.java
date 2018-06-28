@@ -5,7 +5,7 @@ package com.rhyme.java并发编程的艺术.part1;
 
 /**
  * @Author: weiping.gong
- * @Description:
+ * @Description:多线程一定更快吗
  * @Date: created in 2018年6月27日
  */
 public class ConcurrencyTest {

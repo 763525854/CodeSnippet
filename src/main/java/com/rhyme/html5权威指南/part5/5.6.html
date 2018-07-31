@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Example</title>
+</head>
+<body>
+    <script type="text/javascript">
+        var myGlobaVar="apples";
+        function myFunc(name) {
+            var myLocalVar="sunny";
+            return ("Hello "+name+" .today is "+myLocalVar);
+        }
+        document.writeln(myFunc("Adam"));
+    </script>
+    <script type="text/javascript">
+        document.writeln("i like "+myGlobaVar);
+    </script>
+</body>
+</html>

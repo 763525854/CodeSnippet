@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    var myData = {
+        name: "adam",
+        weather: "sunny",
+        printMessages: function () {
+            document.writeln("Hello " + this.name);
+            document.writeln("Today is " + this.weather);
+        }
+    };
+    myData.printMessages();
+</script>
+</body>
+</html>

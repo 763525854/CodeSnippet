@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script type="text/javascript">
+    //toString();以十进制形式表示数值
+    var myData1 = (5).toString() + String(5);
+    document.writeln("Result: " + myData1);
+    document.writeln("<br>");
+    //toString();以2进制形式表示数值
+    document.writeln("Result2: "+(13).toString(2));
+    document.writeln("<br>");
+    //toString();以8进制形式表示数值
+    document.writeln("Result2: "+(13).toString(8));
+    document.writeln("<br>");
+    //toString();以16进制形式表示数值
+    document.writeln("Result2: "+(13).toString(16));
+    document.writeln("<br>");
+    //toFixed();以小数点后有n位数字的形式表示实数
+    document.writeln((13.2323232).toFixed(3));
+    document.writeln("<br>");
+    //以指数表示法表示数值
+    document.writeln((123151).toExponential(3));
+</script>
+</body>
+</html>

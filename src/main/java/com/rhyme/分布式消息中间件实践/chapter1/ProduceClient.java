@@ -1,4 +1,4 @@
-package com.rhyme.分布式消息中间件实践;
+package com.rhyme.分布式消息中间件实践.chapter1;
 
 //生产消息
 public class ProduceClient {

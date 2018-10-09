@@ -1,4 +1,4 @@
-package com.rhyme.分布式消息中间件实践;
+package com.rhyme.分布式消息中间件实践.chapter1;
 //消费消息
 public class ConsumeClient {
 	@SuppressWarnings("static-access")

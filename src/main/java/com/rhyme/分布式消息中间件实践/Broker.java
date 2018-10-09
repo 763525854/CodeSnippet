@@ -2,6 +2,7 @@ package com.rhyme.分布式消息中间件实践;
 
 import java.util.concurrent.ArrayBlockingQueue;
 
+//消息处理中心
 public class Broker {
 	// 队列存储消息的最大数量
 	private final static int MAX_SIZE = 3;

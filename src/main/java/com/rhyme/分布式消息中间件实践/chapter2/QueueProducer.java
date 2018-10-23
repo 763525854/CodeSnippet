@@ -10,6 +10,7 @@ import javax.jms.TextMessage;
 import org.apache.activemq.ActiveMQConnection;
 import org.apache.activemq.ActiveMQConnectionFactory;
 
+//消息生产者
 public class QueueProducer {
 	public static final String USERNAME = ActiveMQConnection.DEFAULT_USER;
 	public static final String PASSWORD = ActiveMQConnection.DEFAULT_PASSWORD;

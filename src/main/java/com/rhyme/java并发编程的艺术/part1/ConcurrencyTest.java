@@ -10,6 +10,7 @@ package com.rhyme.java并发编程的艺术.part1;
  */
 public class ConcurrencyTest {
 	private static final long count = 10000000000L;
+//	private static final long count = 10000L;
 
 	public static void main(String[] args) throws InterruptedException {
 		concuttency();
@@ -22,29 +23,34 @@ public class ConcurrencyTest {
 
 			@Override
 			public void run() {
-				int a = 0;
+				@SuppressWarnings("unused")
+				long a = 0;
 				for (long i = 0; i < count; i++) {
 					a += 5;
 				}
+				System.out.println("thread inner");
 			}
 		});
 		thread.start();
-		int b = 0;
+		long b = 0;
 		for (long i = 0; i < count; i++) {
 			b--;
 		}
+		System.out.println("thread out");
 		long time = System.currentTimeMillis() - start;
 		thread.join();
+		long time2 = System.currentTimeMillis() - start;
 		System.out.println("concurrency:" + time + "ms,b=" + b);
+		System.out.println("concurrency:" + time2 + "ms,b=" + b);
 	}
 
 	private static void serial() {
 		long start = System.currentTimeMillis();
-		int a = 0;
+		long a = 0;
 		for (long i = 0; i < count; i++) {
 			a += 5;
 		}
-		int b = 0;
+		long b = 0;
 		for (long i = 0; i < count; i++) {
 			b--;
 		}

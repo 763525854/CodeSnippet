@@ -12,19 +12,20 @@ public class DeadLockDemo {
 	private static String A = "A";
 	private static String B = "B";
 
-	public static void main(String[] args) {
+	public static void main(String[] args) throws Exception {
 		new DeadLockDemo().deadLock();
 	}
 
-	private void deadLock() {
+	private void deadLock() throws Exception {
 		Thread t1 = new Thread(new Runnable() {
 
+			@SuppressWarnings("static-access")
 			@Override
 			public void run() {
 				synchronized (A) {
 					try {
 						System.out.println("into A thread");
-						// Thread.currentThread().sleep(10);
+						 Thread.currentThread().sleep(2000);
 					} catch (Exception e) {
 						e.printStackTrace();
 					}
@@ -47,7 +48,6 @@ public class DeadLockDemo {
 				}
 			}
 		});
-
 		t1.start();
 		t2.start();
 	}

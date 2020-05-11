@@ -12,11 +12,11 @@ public class DeadLockDemo {
 	private static String A = "A";
 	private static String B = "B";
 
-	public static void main(String[] args) throws Exception {
+	public static void main(String[] args) {
 		new DeadLockDemo().deadLock();
 	}
 
-	private void deadLock() throws Exception {
+	private void deadLock() {
 		Thread t1 = new Thread(new Runnable() {
 
 			@SuppressWarnings("static-access")
@@ -48,6 +48,7 @@ public class DeadLockDemo {
 				}
 			}
 		});
+
 		t1.start();
 		t2.start();
 	}

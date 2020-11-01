@@ -5,7 +5,7 @@ import java.util.Random;
 
 public class 插入排序 {
 	public static void insertSort(int a[]) {
-		//更高的效率
+		// 更高的效率
 		long time = System.currentTimeMillis();
 		for (int i = 0; i < a.length; i++) {
 			for (int j = i; j > 0; j--) {
@@ -22,7 +22,7 @@ public class 插入排序 {
 	}
 
 	public static void main(String[] args) {
-		 int j = 100000;
+		int j = 100000;
 		int[] b = new int[j];
 		int[] c = new int[j];
 		for (int i = 0; i < j; i++) {

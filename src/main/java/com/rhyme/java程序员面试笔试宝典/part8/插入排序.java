@@ -5,33 +5,36 @@ import java.util.Random;
 
 public class 插入排序 {
 	public static void insertSort(int a[]) {
-		long time=System.currentTimeMillis();
+		//更高的效率
+		long time = System.currentTimeMillis();
 		for (int i = 0; i < a.length; i++) {
-			for (int j = i; j>0; j--) {
-				int temp=a[j-1];
-				if (a[j]<a[j-1]) {
-					a[j-1]=a[j];
-					a[j]=temp;
+			for (int j = i; j > 0; j--) {
+				int temp = a[j - 1];
+				if (a[j] < a[j - 1]) {
+					a[j - 1] = a[j];
+					a[j] = temp;
+				} else {
+					break;
 				}
 			}
 		}
-		System.out.println((System.currentTimeMillis()-time)+"s");
+		System.out.println((System.currentTimeMillis() - time) + "s");
 	}
+
 	public static void main(String[] args) {
-		int a[]= {5,4,9,8,7,6,0,1,3,2};
-		int j=100000;
-		int[] b=new int[j];
-		int[] c=new int[j];
+		 int j = 100000;
+		int[] b = new int[j];
+		int[] c = new int[j];
 		for (int i = 0; i < j; i++) {
-			b[i]=new Random().nextInt(j);
+			b[i] = new Random().nextInt(j);
 		}
-		c=Arrays.copyOf(b, j);
+		c = Arrays.copyOf(b, j);
 		insertSort(b);
 		insertSortA(c);
 	}
-	
+
 	public static void insertSortA(int a[]) {
-		long time=System.currentTimeMillis();
+		long time = System.currentTimeMillis();
 		int j;
 		for (int i = 1; i < a.length; i++) {
 			Integer temp = a[i];
@@ -39,8 +42,7 @@ public class 插入排序 {
 				a[j] = a[j - 1];
 			a[j] = temp;
 		}
-		System.out.println((System.currentTimeMillis()-time)+"s");
+		System.out.println((System.currentTimeMillis() - time) + "s");
 	}
 
-	
 }

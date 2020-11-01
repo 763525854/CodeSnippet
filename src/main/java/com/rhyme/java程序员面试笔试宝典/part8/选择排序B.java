@@ -1,5 +1,7 @@
 package com.rhyme.java程序员面试笔试宝典.part8;
 
+import java.util.Random;
+
 public class 选择排序B {
 	public static void selectSort(int a[]) {
 		for (int i = 0; i < a.length; i++) {
@@ -16,7 +18,11 @@ public class 选择排序B {
 		}
 	}
 	public static void main(String[] args) {	
-		int a[]= {5,4,9,8,7,6,0,1,3,2};
+		int j = 10;
+		int[] a = new int[j];
+		for (int i = 0; i < j; i++) {
+			a[i] = new Random().nextInt(j);
+		}
 		selectSort(a);
 	}
 }

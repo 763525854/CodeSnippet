@@ -31,6 +31,7 @@ public class 冒泡排序 {
 	}
 
 	public static void bubbleSortB(int a[]) {
+		// 冒泡排序增强型，当中途某次循环时，发现没有任何改动，说明此时已经排序好了。不必进行后续的比较
 		long time = System.currentTimeMillis();
 		boolean needNextPass = true;
 		for (int i = 1; i < a.length && needNextPass; i++) {

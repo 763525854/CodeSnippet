@@ -4,6 +4,7 @@ import java.util.Arrays;
 import java.util.Random;
 
 public class 快速排序 {
+	//经过测试，快速排序的算法优于归并排序，即优于递归排序。千万级数组排序，平均效能是两倍
 	public static void main(String[] args) {
 		int j = 10;
 		int[] a = new int[j];

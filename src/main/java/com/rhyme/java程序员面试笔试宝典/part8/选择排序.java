@@ -13,15 +13,14 @@ import java.util.Random;
 public class 选择排序 {
 
 	public static void main(String[] args) {
-		int j = 10;
+		int j = 100000;
 		int[] a = new int[j];
 		for (int i = 0; i < j; i++) {
 			a[i] = new Random().nextInt(j);
 		}
-		// int a[] = { 5, 4, 9, 8, 7, 6, 0, 1, 3, 2 };
-		System.out.println(Arrays.toString(a));
+		long time = System.currentTimeMillis();
 		selectSort(a);
-		System.out.println(Arrays.toString(a));
+		System.out.println((System.currentTimeMillis() - time) + "s");
 	}
 
 	public static void selectSort(int a[]) {

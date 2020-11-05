@@ -7,7 +7,7 @@ public class 插入排序 {
 	public static void insertSort(int a[]) {
 		// 更高的效率
 		long time = System.currentTimeMillis();
-		for (int i = 0; i < a.length; i++) {
+		for (int i = 1; i < a.length; i++) {
 			for (int j = i; j > 0; j--) {
 				int temp = a[j - 1];
 				if (a[j] < a[j - 1]) {
@@ -21,16 +21,35 @@ public class 插入排序 {
 		System.out.println((System.currentTimeMillis() - time) + "s");
 	}
 
+	public static void insertSortC(int a[]) {
+		// 更高的效率
+		long time = System.currentTimeMillis();
+		for (int i = 1; i < a.length; i++) {
+			int temp = a[i];
+			for (int j = i; j > 0; j--) {
+				if (temp < a[j - 1]) {
+					a[j] = a[j - 1];
+					a[j - 1] = temp;
+				} else {
+					break;
+				}
+			}
+		}
+		System.out.println((System.currentTimeMillis() - time) + "s");
+	}
+
 	public static void main(String[] args) {
-		int j = 100000;
+		int j = 10000;
 		int[] b = new int[j];
 		int[] c = new int[j];
 		for (int i = 0; i < j; i++) {
 			b[i] = new Random().nextInt(j);
 		}
 		c = Arrays.copyOf(b, j);
+		System.out.println(Arrays.toString(b));
 		insertSort(b);
-		insertSortA(c);
+		System.out.println(Arrays.toString(b));
+		// insertSortA(c);
 	}
 
 	public static void insertSortA(int a[]) {

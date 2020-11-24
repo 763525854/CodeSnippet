@@ -36,7 +36,7 @@ public class 递归排序 {
 		return a;
 	}
 
-	public static void mergeSortB(int[] a) {
+	public static int[] mergeSortB(int[] a) {
 		if (a.length > 1) {
 			int mid = a.length / 2;
 			int left[] = Arrays.copyOfRange(a, 0, mid);
@@ -45,7 +45,9 @@ public class 递归排序 {
 			mergeSort(right);
 			int[] temp = mergeB(left, right);
 			System.arraycopy(temp, 0, a, 0, temp.length);
+			return temp;
 		}
+		return a;
 	}
 
 	public static int[] merge(int[] left, int[] right) {

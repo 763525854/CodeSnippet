@@ -14,18 +14,15 @@ public class 递归排序 {
 		// System.out.println(Arrays.toString(a));
 		int b[] = Arrays.copyOf(a, j);
 		long time1 = System.currentTimeMillis();
-		mergeSort(a);
+		int c[]=mergeSort(a);
+		System.out.println(Arrays.toString(c));
 		System.out.println(System.currentTimeMillis() - time1);
 		time1 = System.currentTimeMillis();
 		mergeSortB(b);
 		System.out.println(System.currentTimeMillis() - time1);
-		// int b[] = { 2, 4, 4, 6 };
-		// int c[] = { 1, 4, 4, 5 };
-		// int k[] = merge(b, c);
-		// System.out.println(Arrays.toString(k));
 	}
 
-	public static void mergeSort(int[] a) {
+	public static int[] mergeSort(int[] a) {
 		if (a.length > 1) {
 			int mid = a.length / 2;
 			int left[] = Arrays.copyOfRange(a, 0, mid);
@@ -34,7 +31,9 @@ public class 递归排序 {
 			mergeSort(right);
 			int[] temp = merge(left, right);
 			System.arraycopy(temp, 0, a, 0, temp.length);
+			return temp;
 		}
+		return a;
 	}
 
 	public static void mergeSortB(int[] a) {

@@ -13,7 +13,9 @@ public class 快速排序 {
 		}
 		int[] c = new int[j];
 		c = Arrays.copyOf(a, j);
+		System.out.println(Arrays.toString(c));
 		quickSort(c, 0, c.length - 1);
+		System.out.println(Arrays.toString(c));
 	}
 
 	public static void quickSort(int[] a, int left, int rihgt) {

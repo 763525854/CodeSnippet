@@ -4,18 +4,24 @@ import java.util.Arrays;
 import java.util.Random;
 
 public class 快速排序 {
-	//经过测试，快速排序的算法优于归并排序，即优于递归排序。千万级数组排序，平均效能是两倍
+	// 经过测试，快速排序的算法优于归并排序，即优于递归排序。千万级数组排序，平均效能是两倍
 	public static void main(String[] args) {
-		int j = 10;
+		int j = 100000000;
 		int[] a = new int[j];
 		for (int i = 0; i < j; i++) {
 			a[i] = new Random().nextInt(j - 1);
 		}
 		int[] c = new int[j];
 		c = Arrays.copyOf(a, j);
-		System.out.println(Arrays.toString(c));
+		if (j < 100) {
+			System.out.println(Arrays.toString(c));
+		}
+		long time = System.currentTimeMillis();
 		quickSort(c, 0, c.length - 1);
-		System.out.println(Arrays.toString(c));
+		System.out.println(System.currentTimeMillis() - time);
+		if (j < 100) {
+			System.out.println(Arrays.toString(c));
+		}
 	}
 
 	public static void quickSort(int[] a, int left, int rihgt) {

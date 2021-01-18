@@ -10,16 +10,23 @@ public class 递归排序 {
 		for (int i = 0; i < j; i++) {
 			a[i] = new Random().nextInt(j - 1);
 		}
-
-		// System.out.println(Arrays.toString(a));
+		if (j < 100) {
+			System.out.println(Arrays.toString(a));
+		}
 		int b[] = Arrays.copyOf(a, j);
+		int c[] = Arrays.copyOf(a, j);
 		long time1 = System.currentTimeMillis();
-		int c[]=mergeSort(a);
-		System.out.println(Arrays.toString(c));
+		int a1[] = mergeSort(b);
 		System.out.println(System.currentTimeMillis() - time1);
+		if (j < 100) {
+			System.out.println(Arrays.toString(a1));
+		}
 		time1 = System.currentTimeMillis();
-		mergeSortB(b);
+		int c1[] = mergeSortB(c);
 		System.out.println(System.currentTimeMillis() - time1);
+		if (j < 100) {
+			System.out.println(Arrays.toString(c1));
+		}
 	}
 
 	public static int[] mergeSort(int[] a) {
@@ -41,8 +48,8 @@ public class 递归排序 {
 			int mid = a.length / 2;
 			int left[] = Arrays.copyOfRange(a, 0, mid);
 			int right[] = Arrays.copyOfRange(a, mid, a.length);
-			mergeSort(left);
-			mergeSort(right);
+			mergeSortB(left);
+			mergeSortB(right);
 			int[] temp = mergeB(left, right);
 			System.arraycopy(temp, 0, a, 0, temp.length);
 			return temp;
